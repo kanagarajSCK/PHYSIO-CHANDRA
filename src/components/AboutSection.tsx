@@ -3,7 +3,7 @@ import therapistImg from "@/assets/therapist-portrait.jpg";
 
 const AboutSection = () => {
   return (
-    <section id="about-me" className="py-16 lg:py-24 section-mint">
+    <section id="about-me" className="scroll-mt-24 py-16 lg:py-24 section-mint">
       <div className="container grid lg:grid-cols-2 gap-12 items-center">
         <motion.div
           initial={{ opacity: 0, x: -60 }}

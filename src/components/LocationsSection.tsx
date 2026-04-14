@@ -9,7 +9,7 @@ const locations = [
 
 const LocationsSection = () => {
   return (
-    <section id="where-i-work" className="py-16 lg:py-24 bg-card">
+    <section id="where-i-work" className="scroll-mt-24 py-16 lg:py-24 bg-card">
       <div className="container">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}

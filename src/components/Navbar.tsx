@@ -7,10 +7,10 @@ import logoImg from "@/assets/logo.png"; // ✅ USE YOUR LOGO
 
 const navLinks = [
   "Home",
-  "About me",
+  "Where I work",
   "Who I help",
   "How I help",
-  "Where I work",
+  "About me",
   "Blogs",
 ];
 
@@ -22,7 +22,7 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="sticky top-0 z-50 bg-card/90 backdrop-blur-md border-b border-border"
+      className="sticky top-0 z-50 bg-card/90 backdrop-blur-lg border-b border-border"
     >
       <div className="container flex items-center justify-between py-4">
         {/* ✅ ONLY LOGO IMAGE (NO TEXT) */}
@@ -30,7 +30,7 @@ const Navbar = () => {
   <motion.img
     src={logoImg}
     alt="Logo"
-    className="h-12 sm:h-14 md:h-16 w-auto object-contain cursor-pointer rounded-full shadow-md"
+    className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto object-contain cursor-pointer rounded-full shadow-md"
     
     // animation
     initial={{ opacity: 0, scale: 0.8 }}
@@ -48,7 +48,7 @@ const Navbar = () => {
             <a
               key={link}
               href={`#${link.toLowerCase().replace(/\s/g, "-")}`}
-              className="text-sm font-semibold text-primary hover:text-accent transition-colors relative group"
+              className="text-base md:text-lg font-semibold text-primary hover:text-accent transition-colors relative group"
             >
               {link}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full" />
@@ -66,7 +66,7 @@ const Navbar = () => {
                 type="button"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="hidden lg:block bg-accent text-accent-foreground px-6 py-3 rounded-full font-semibold text-sm shadow-lg hover:shadow-xl transition-shadow"
+                className="hidden lg:block bg-accent text-accent-foreground px-8 py-4 rounded-full font-semibold text-base shadow-lg hover:shadow-xl transition-shadow"
               >
                 Book appointment
               </motion.button>
@@ -79,7 +79,7 @@ const Navbar = () => {
           onClick={() => setOpen(!open)}
           className="lg:hidden text-primary"
         >
-          {open ? <X size={28} /> : <Menu size={28} />}
+          {open ? <X size={32} /> : <Menu size={32} />}
         </button>
       </div>
 
@@ -107,7 +107,7 @@ const Navbar = () => {
                 trigger={
                   <button
                     type="button"
-                    className="bg-accent text-accent-foreground px-6 py-3 rounded-full font-semibold text-sm text-center"
+                    className="bg-accent text-accent-foreground px-8 py-4 rounded-full font-semibold text-base text-center"
                   >
                     Book appointment
                   </button>

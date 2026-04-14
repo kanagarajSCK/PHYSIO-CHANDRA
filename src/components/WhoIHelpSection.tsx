@@ -10,7 +10,7 @@ const categories = [
 
 const WhoIHelpSection = () => {
   return (
-    <section id="who-i-help" className="py-16 lg:py-24 bg-card">
+    <section id="who-i-help" className="scroll-mt-24 py-16 lg:py-24 bg-card">
       <div className="container grid lg:grid-cols-2 gap-12 items-center">
         <motion.div
           initial={{ opacity: 0, rotate: -3 }}

@@ -25,7 +25,7 @@ const HeroSection = () => {
   const next = () => setCurrent((p) => (p + 1) % conditions.length);
 
   return (
-    <section id="home" className="section-mint py-12 lg:py-20">
+    <section id="home" className="section-mint scroll-mt-24 py-12 lg:py-20">
       <div className="container grid lg:grid-cols-[1fr_400px] gap-8 items-center">
         {/* Carousel */}
         <div className="relative">

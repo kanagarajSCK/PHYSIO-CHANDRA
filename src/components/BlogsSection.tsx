@@ -29,7 +29,7 @@ const posts = [
 
 const BlogsSection = () => {
   return (
-    <section id="blogs" className="relative py-16 lg:py-24 section-mint overflow-hidden">
+    <section id="blogs" className="relative scroll-mt-24 py-16 lg:py-24 section-mint overflow-hidden">
       <div className="pointer-events-none absolute left-0 top-8 h-44 w-44 rounded-full bg-accent/15 blur-3xl" />
       <div className="pointer-events-none absolute right-0 bottom-16 h-52 w-52 rounded-full bg-primary/15 blur-3xl" />
 
