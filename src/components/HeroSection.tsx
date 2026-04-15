@@ -132,9 +132,9 @@ const HeroSection = () => {
             transition={{ delay: 0.8, duration: 0.7 }}
             className="text-center mt-4"
           >
-            <Button size="lg" className="px-8 py-3">
+            {/* <Button size="lg" className="px-8 py-3">
               Book Consultation
-            </Button>
+            </Button> */}
           </motion.div>
         </motion.div>
       </div>

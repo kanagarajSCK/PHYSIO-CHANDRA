@@ -2,9 +2,27 @@ import { motion } from "framer-motion";
 import { MapPin, Clock } from "lucide-react";
 
 const locations = [
-  { name: "Central District", time: "Mon-Wed, 9AM – 5PM" },
-  { name: "Northfield Center", time: "Thu-Fri, 10AM – 6PM" },
-  { name: "Westside Physio", time: "Saturday, 9AM – 2PM" },
+  {
+    name: "Central District",
+    time: "Mon-Wed, 9AM – 5PM",
+    buttonLabel: "Visit Eye Foundation",
+    buttonLink: "https://www.theeyefoundation.com/",
+    external: true,
+  },
+  {
+    name: "Northfield Center",
+    time: "Thu-Fri, 10AM – 6PM",
+    buttonLabel: "Book an appointment",
+    buttonLink: "#book",
+    external: false,
+  },
+  {
+    name: "Westside Physio",
+    time: "Saturday, 9AM – 2PM",
+    buttonLabel: "Book an appointment",
+    buttonLink: "#book",
+    external: false,
+  },
 ];
 
 const LocationsSection = () => {
@@ -43,12 +61,14 @@ const LocationsSection = () => {
                 <span className="text-sm font-medium">Time: {loc.time}</span>
               </div>
               <motion.a
-                href="#book"
+                href={loc.buttonLink}
+                target={loc.external ? "_blank" : undefined}
+                rel={loc.external ? "noopener noreferrer" : undefined}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-full font-semibold text-sm shadow-md"
               >
-                Book an appointment
+                {loc.buttonLabel}
               </motion.a>
             </motion.div>
           ))}
