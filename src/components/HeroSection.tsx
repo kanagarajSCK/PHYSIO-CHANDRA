@@ -53,7 +53,7 @@ const HeroSection = () => {
                   height={600}
                   onClick={handleImageClick}
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent flex items-start justify-center pt-8">
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent flex items-start justify-center pt-8 pointer-events-none">
                   <h2 className="text-2xl md:text-3xl font-heading font-bold text-white text-center">
                     {conditions[current].title}
                   </h2>
