@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 import BookingDialog from "./BookingDialog";
 import logoImg from "@/assets/logo.png"; // ✅ USE YOUR LOGO
 
@@ -15,6 +16,29 @@ const navLinks = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavClick = (link: string) => {
+    const sectionId = link.toLowerCase().replace(/\s/g, "-");
+    if (location.pathname !== "/") {
+      // If not on home page, navigate to home first, then scroll to section
+      navigate("/");
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      // If on home page, just scroll to section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+    setOpen(false); // Close mobile menu
+  };
 
   return (
     <motion.nav
@@ -29,8 +53,7 @@ const Navbar = () => {
   <motion.img
     src={logoImg}
     alt="Logo"
-    className="h-20 sm:h-24 md:h-30 lg:h-36 w-auto object-contain cursor-pointer rounded-full shadow-md"
-    
+    className="h-20 sm:h-24 md:h-30 lg:h-36 w-auto object-contain cursor-pointer rounded-full shadow-md"    onClick={() => navigate("/")}    
     // animation
     initial={{ opacity: 0, scale: 0.8 }}
     animate={{ opacity: 1, scale: 1 }}
@@ -44,14 +67,14 @@ const Navbar = () => {
         {/* NAV LINKS */}
         <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <button
               key={link}
-              href={`#${link.toLowerCase().replace(/\s/g, "-")}`}
-              className="text-lg md:text-xl font-semibold text-primary hover:text-accent transition-colors relative group"
+              onClick={() => handleNavClick(link)}
+              className="text-lg md:text-xl font-semibold text-primary hover:text-accent transition-colors relative group cursor-pointer"
             >
               {link}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full" />
-            </a>
+            </button>
           ))}
         </div>
 
@@ -91,14 +114,13 @@ const Navbar = () => {
           >
             <div className="container py-4 flex flex-col gap-3">
               {navLinks.map((link) => (
-                <a
+                <button
                   key={link}
-                  href={`#${link.toLowerCase().replace(/\s/g, "-")}`}
-                  onClick={() => setOpen(false)}
-                  className="text-base font-semibold text-primary py-2"
+                  onClick={() => handleNavClick(link)}
+                  className="text-base font-semibold text-primary py-2 text-left"
                 >
                   {link}
-                </a>
+                </button>
               ))}
               <BookingDialog
                 trigger={

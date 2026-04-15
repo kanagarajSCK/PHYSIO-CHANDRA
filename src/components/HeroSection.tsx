@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import therapistImg from "@/assets/therapist-portrait.jpg";
 import chronicPainImg from "@/assets/chronic-pain.jpg";
@@ -8,13 +9,14 @@ import sportsInjuryImg from "@/assets/sports-injury.jpg";
 import headacheImg from "@/assets/headache.jpg";
 
 const conditions = [
-  { title: "CHRONIC PAIN", image: chronicPainImg },
-  { title: "SPORTS INJURY", image: sportsInjuryImg },
-  { title: "HEADACHE", image: headacheImg },
+  { title: "CHRONIC PAIN", image: chronicPainImg, path: "/chronic-pain" },
+  { title: "SPORTS INJURY", image: sportsInjuryImg, path: "/sports-injury" },
+  { title: "HEADACHE", image: headacheImg, path: "/headache" },
 ];
 
 const HeroSection = () => {
   const [current, setCurrent] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setInterval(() => setCurrent((p) => (p + 1) % conditions.length), 4000);
@@ -23,6 +25,10 @@ const HeroSection = () => {
 
   const prev = () => setCurrent((p) => (p - 1 + conditions.length) % conditions.length);
   const next = () => setCurrent((p) => (p + 1) % conditions.length);
+
+  const handleImageClick = () => {
+    navigate(conditions[current].path);
+  };
 
   return (
     <section id="home" className="section-mint scroll-mt-24 py-12 lg:py-20">
@@ -45,9 +51,10 @@ const HeroSection = () => {
                 <img
                   src={conditions[current].image}
                   alt={conditions[current].title}
-                  className="w-full h-64 md:h-80 object-cover rounded-xl"
+                  className="w-full h-64 md:h-80 object-cover rounded-xl cursor-pointer hover:opacity-90 transition-opacity"
                   width={800}
                   height={600}
+                  onClick={handleImageClick}
                 />
               </motion.div>
             </AnimatePresence>
