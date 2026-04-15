@@ -1,12 +1,12 @@
 const WhatsAppButton = () => {
   return (
     <a
-      href="https://wa.me/918667491227"
+      href="https://wa.me/919390162611?text=Hello%20Dr.%20Chandra%2C%20I%20would%20like%20to%20inquire%20about%20your%20physiotherapy%20services."
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Open WhatsApp chat"
       className="fixed right-5 bottom-5 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-2xl ring-2 ring-white/30 transition-transform duration-200 hover:-translate-y-1 active:scale-95"
-      title="WhatsApp: +91 8667491227"
+      title="WhatsApp: +91 9390162611"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

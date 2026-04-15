@@ -20,7 +20,7 @@ const Footer = () => {
         <div>
           <h4 className="font-semibold mb-3">Contact</h4>
           <div className="space-y-2 text-sm opacity-80">
-            <div className="flex items-center gap-2"><Phone size={14} /> +1 (555) 123-4567</div>
+            <div className="flex items-center gap-2"><Phone size={14} /> +91 9390162611</div>
             <div className="flex items-center gap-2"><Mail size={14} /> hello@physiochandra.com</div>
             <div className="flex items-center gap-2"><Instagram size={14} /> @physiochandra</div>
           </div>

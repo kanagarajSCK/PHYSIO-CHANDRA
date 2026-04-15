@@ -90,7 +90,7 @@ Sent from Website
               Contact number
               <Input
                 type="tel"
-                placeholder="+91 9876543210"
+                placeholder="+91 8667491227"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 required
