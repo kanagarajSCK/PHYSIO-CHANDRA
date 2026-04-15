@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { ThemeToggle } from "./ThemeToggle";
 import BookingDialog from "./BookingDialog";
 import logoImg from "@/assets/logo.png"; // ✅ USE YOUR LOGO
 
@@ -30,7 +29,7 @@ const Navbar = () => {
   <motion.img
     src={logoImg}
     alt="Logo"
-    className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto object-contain cursor-pointer rounded-full shadow-md"
+    className="h-20 sm:h-24 md:h-30 lg:h-36 w-auto object-contain cursor-pointer rounded-full shadow-md"
     
     // animation
     initial={{ opacity: 0, scale: 0.8 }}
@@ -48,7 +47,7 @@ const Navbar = () => {
             <a
               key={link}
               href={`#${link.toLowerCase().replace(/\s/g, "-")}`}
-              className="text-base md:text-lg font-semibold text-primary hover:text-accent transition-colors relative group"
+              className="text-lg md:text-xl font-semibold text-primary hover:text-accent transition-colors relative group"
             >
               {link}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full" />
@@ -58,8 +57,6 @@ const Navbar = () => {
 
         {/* RIGHT SIDE */}
         <div className="flex items-center gap-4">
-          <ThemeToggle />
-
           <BookingDialog
             trigger={
               <motion.button
@@ -98,7 +95,7 @@ const Navbar = () => {
                   key={link}
                   href={`#${link.toLowerCase().replace(/\s/g, "-")}`}
                   onClick={() => setOpen(false)}
-                  className="text-sm font-semibold text-primary py-2"
+                  className="text-base font-semibold text-primary py-2"
                 >
                   {link}
                 </a>
