@@ -35,7 +35,7 @@ const HeroSection = () => {
       <div className="container grid lg:grid-cols-[1fr_400px] gap-8 items-center">
         {/* Carousel */}
         <div className="relative">
-          <div className="relative overflow-hidden rounded-2xl bg-card shadow-2xl max-w-2xl mx-auto">
+          <div className="relative overflow-hidden rounded-2xl bg-card shadow-2xl max-w-2xl mx-auto h-96 md:h-[500px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current}
@@ -43,19 +43,21 @@ const HeroSection = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -80 }}
                 transition={{ duration: 0.5 }}
-                className="p-8"
+                className="relative w-full h-full"
               >
-                <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground text-center mb-6">
-                  {conditions[current].title}
-                </h2>
                 <img
                   src={conditions[current].image}
                   alt={conditions[current].title}
-                  className="w-full h-64 md:h-80 object-cover rounded-xl cursor-pointer hover:opacity-90 transition-opacity"
+                  className="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
                   width={800}
                   height={600}
                   onClick={handleImageClick}
                 />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent flex items-start justify-center pt-8">
+                  <h2 className="text-2xl md:text-3xl font-heading font-bold text-white text-center">
+                    {conditions[current].title}
+                  </h2>
+                </div>
               </motion.div>
             </AnimatePresence>
           </div>
