@@ -19,25 +19,27 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const handleScrollTo = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const handleNavClick = (link: string) => {
     const sectionId = link.toLowerCase().replace(/\s/g, "-");
+    setOpen(false); // Close mobile menu first so the page is visible
+
     if (location.pathname !== "/") {
-      // If not on home page, navigate to home first, then scroll to section
       navigate("/");
       setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 100);
+        handleScrollTo(sectionId);
+      }, 250);
     } else {
-      // If on home page, just scroll to section
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
+      setTimeout(() => {
+        handleScrollTo(sectionId);
+      }, 150);
     }
-    setOpen(false); // Close mobile menu
   };
 
   return (
@@ -116,8 +118,9 @@ const Navbar = () => {
               {navLinks.map((link) => (
                 <button
                   key={link}
+                  type="button"
                   onClick={() => handleNavClick(link)}
-                  className="text-base font-semibold text-primary py-2 text-left"
+                  className="text-base font-semibold text-primary py-2 text-left hover:text-accent transition-colors"
                 >
                   {link}
                 </button>
