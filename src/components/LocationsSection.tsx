@@ -6,15 +6,15 @@ const locations = [
     name: "Central District",
     time: "Mon-Wed, 9AM – 5PM",
     buttonLabel: "Visit Eye Foundation",
-    buttonLink: "https://www.theeyefoundation.com/",
+    buttonLink: "https://bc-ice.janeapp.com/#/staff_member/87",
     external: true,
   },
   {
     name: "Northfield Center",
     time: "Thu-Fri, 10AM – 6PM",
     buttonLabel: "Book an appointment",
-    buttonLink: "#book",
-    external: false,
+    buttonLink: "https://arkaphysiotherapy.janeapp.com/#/staff_member/16",
+    external: true,
   },
   {
     name: "Westside Physio",
