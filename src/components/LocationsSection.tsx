@@ -6,29 +6,51 @@ import westsideImg from "@/assets/image copy 2.png";
 
 const locations = [
   {
-    time: "Mon-Wed, 9AM – 5PM",
-    buttonLabel: "ARKA Physiotherapy",
+    name: "South Surrey / Panorama",
+    schedule: [
+      "Monday 2PM – 7PM",
+      "Wednesday 12PM – 7PM",
+      "Friday 9AM – 1PM",
+    ],
+    address: "14818 60 Ave Unit 106, Surrey, BC V3S 0B5",
+    phone: "(778) 564-5999",
+    buttonLabel: "Book Appointment",
     buttonLink: "https://arkaphysiotherapy.janeapp.com/#/staff_member/",
     external: true,
     image: centralImg,
-    imageAlt: "Central District clinic",
+    imageAlt: "South Surrey clinic",
   },
   {
-    time: "Thu-Fri, 10AM – 6PM",
-    buttonLabel: "Book an appointment",
+    name: "Burnaby / New Westminster",
+    schedule: [
+      "Tuesday 8AM – 1PM",
+      "Thursday 10AM – 7PM",
+      "Saturday 3PM – 7PM",
+    ],
+    address: "7885 6th St #201, Burnaby, BC V3N 3N4",
+    phone: "(604) 553-4000",
+    buttonLabel: "Book Appointment",
     buttonLink: "https://bc-ice.janeapp.com/#/staff_member/87",
     external: true,
     image: northfieldImg,
-    imageAlt: "Northfield Center physiotherapist",
+    imageAlt: "Burnaby clinic",
   },
   {
-    time: "Saturday, 9AM – 2PM",
-    buttonLabel: "Book an appointment",
+    name: "Surrey / Guildford",
+    schedule: [
+      "Monday 8AM – 1PM",
+      "Tuesday 2PM – 7PM",
+      "Friday 3PM – 7PM",
+      "Saturday 8AM – 1PM",
+    ],
+    address: "10190 152A St, Surrey BC V3R 1J7",
+    phone: "(604) 581-0232",
+    buttonLabel: "Book Appointment",
     buttonLink:
       "https://phgsurrey.janeapp.com/locations/performance-health-group-surrey/book#/staff_member/89",
     external: true,
     image: westsideImg,
-    imageAlt: "Westside Physio session",
+    imageAlt: "Guildford clinic",
   },
 ];
 
@@ -65,7 +87,7 @@ const LocationsSection = () => {
                 scale: 1.06,
                 boxShadow: "0 20px 50px rgba(0,0,0,0.2)",
               }}
-              className="rounded-3xl border-4 border-primary bg-card p-14 lg:p-16 text-center shadow-xl transition-all duration-300 group"
+              className="rounded-3xl border-4 border-primary bg-card p-10 lg:p-12 text-center shadow-xl transition-all duration-300 group"
             >
               {/* Logo */}
               <div className="w-28 h-28 lg:w-32 lg:h-32 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 overflow-hidden group-hover:bg-primary/20 transition">
@@ -76,13 +98,30 @@ const LocationsSection = () => {
                 />
               </div>
 
-              {/* Time */}
-              <div className="flex items-center justify-center gap-2 text-muted-foreground mb-8">
-                <Clock className="w-5 h-5 group-hover:rotate-12 transition" />
-                <span className="text-base font-medium">
-                  Time: {loc.time}
-                </span>
+              {/* Name */}
+              <h3 className="text-xl font-bold text-primary mb-4">
+                {loc.name}
+              </h3>
+
+              {/* Schedule */}
+              <div className="flex items-start justify-center gap-2 text-muted-foreground mb-4">
+                <Clock className="w-5 h-5 mt-1" />
+                <div className="text-sm text-left space-y-1">
+                  {loc.schedule.map((time, index) => (
+                    <p key={index}>{time}</p>
+                  ))}
+                </div>
               </div>
+
+              {/* Address */}
+              <p className="text-sm font-medium mb-2">
+                📍 {loc.address}
+              </p>
+
+              {/* Phone */}
+              <p className="text-sm font-medium mb-6">
+                📞 {loc.phone}
+              </p>
 
               {/* Button */}
               <motion.a
@@ -91,7 +130,7 @@ const LocationsSection = () => {
                 rel={loc.external ? "noopener noreferrer" : undefined}
                 whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-block bg-primary text-primary-foreground px-8 py-4 rounded-full font-semibold text-base shadow-lg hover:shadow-xl transition"
+                className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-full font-semibold text-sm shadow-lg hover:shadow-xl transition"
               >
                 {loc.buttonLabel}
               </motion.a>
