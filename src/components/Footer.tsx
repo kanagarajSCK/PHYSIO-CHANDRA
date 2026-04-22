@@ -88,7 +88,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="container mt-8 pt-6 border-t border-primary-foreground/20 text-center text-xs opacity-60">
-        &copy; 2026 Physio Chandra. All rights reserved.
+        
       </div>
     </footer>
   );
