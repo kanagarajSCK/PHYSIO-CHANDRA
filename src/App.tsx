@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "./components/ThemeProvider.tsx";
+import ScrollToTopButton from "./components/ScrollToTopButton.tsx";
 import WhatsAppButton from "./components/WhatsAppButton.tsx";
 import Index from "./pages/Index.tsx";
 import ChronicPainPage from "./pages/ChronicPainPage.tsx";
@@ -29,6 +30,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
+        <ScrollToTopButton />
         <WhatsAppButton />
       </TooltipProvider>
     </QueryClientProvider>
