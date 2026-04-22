@@ -38,7 +38,7 @@ const ScrollToTopButton = () => {
           whileHover={{ y: -4, scale: 1.08 }}
           whileTap={{ scale: 0.92 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
-          className="fixed right-5 bottom-24 z-50 inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-2xl ring-2 ring-white/40 transition-colors duration-300 hover:bg-primary focus:outline-none focus-visible:ring-4 focus-visible:ring-accent/40 sm:h-14 sm:w-14"
+          className="fixed right-5 bottom-24 z-50 hidden h-14 w-14 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-2xl ring-2 ring-white/40 transition-colors duration-300 hover:bg-primary focus:outline-none focus-visible:ring-4 focus-visible:ring-accent/40 lg:inline-flex"
         >
           <motion.span
             animate={reduceMotion ? undefined : { y: [0, -3, 0] }}
@@ -49,7 +49,7 @@ const ScrollToTopButton = () => {
             }
             className="inline-flex"
           >
-            <ArrowUp className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2.5} />
+            <ArrowUp className="h-6 w-6" strokeWidth={2.5} />
           </motion.span>
         </motion.button>
       )}
