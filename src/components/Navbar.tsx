@@ -70,9 +70,9 @@ const Navbar = () => {
             <button
               type="button"
               onClick={() => navigate("/")}
-              className="text-left"
+              className="text-left group"
             >
-              <span className="block text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-primary leading-tight">
+              <span className="block text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-primary leading-tight transition-colors duration-500 ease-in-out group-hover:text-blue-500 animate-colorChange">
                 Physio Chandra
               </span>
             </button>
@@ -138,7 +138,7 @@ const Navbar = () => {
               <button
                 type="button"
                 onClick={() => handleNavClick(BOOK_APPOINTMENT_SECTION)}
-                className="bg-accent text-accent-foreground px-8 py-4 rounded-full font-semibold text-lg text-center"
+                className="bg-accent text-accent-foreground px-8 py-4 rounded-full font-semibold text-3xl shadow-lg hover:shadow-xl text-center"
               >
                 Book appointment
               </button>

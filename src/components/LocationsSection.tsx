@@ -56,7 +56,7 @@ const locations = [
 
 const LocationsSection = () => {
   return (
-    <section id="where-i-work" className="scroll-mt-24 py-18 lg:py-24 bg-card">
+    <section id="where-i-work" className="scroll-mt-20 py-18 lg:py-24 bg-card">
       <div className="container mx-auto px-6">
         
         {/* Heading */}
@@ -64,17 +64,17 @@ const LocationsSection = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-5xl lg:text-6xl font-heading font-bold text-primary text-center mb-6"
+          className="text-5xl lg:text-4xl font-heading font-bold text-primary text-center mb-6"
         >
           Work Locations & Schedule
         </motion.h2>
 
-        <p className="text-muted-foreground text-center mb-16 max-w-xl mx-auto text-lg">
+        {/* <p className="text-muted-foreground text-center mb-16 max-w-xl mx-auto text-lg">
           Visit me at any of these convenient locations
-        </p>
+        </p> */}
 
         {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-9xl mx-auto">
           {locations.map((loc, i) => (
             <motion.div
               key={i}
@@ -89,6 +89,13 @@ const LocationsSection = () => {
               }}
               className="rounded-3xl border-4 border-primary bg-card p-10 lg:p-12 text-center shadow-xl transition-all duration-300 group"
             >
+
+              {/* Name */}
+              <h3 className="text-xl font-bold text-primary mb-4">
+                {loc.name}
+              </h3>
+
+              
               {/* Logo */}
               <div className="w-28 h-28 lg:w-32 lg:h-32 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6 overflow-hidden group-hover:bg-primary/20 transition">
                 <img
@@ -98,10 +105,7 @@ const LocationsSection = () => {
                 />
               </div>
 
-              {/* Name */}
-              <h3 className="text-xl font-bold text-primary mb-4">
-                {loc.name}
-              </h3>
+              
 
               {/* Schedule */}
               <div className="flex items-start justify-center gap-2 text-muted-foreground mb-4">
