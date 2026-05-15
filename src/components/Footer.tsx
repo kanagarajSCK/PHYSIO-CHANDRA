@@ -91,25 +91,34 @@ const Footer = () => {
                     />
                   </div>
                 </div>
-                <div className="mt-3 flex items-start gap-2 text-primary-foreground/80">
-                  <Clock size={15} className="mt-0.5 shrink-0" />
-                  <div className="space-y-1">
-                    {location.schedule.map((time) => (
-                      <p key={time}>{time}</p>
-                    ))}
-                  </div>
-                </div>
-                <div className="mt-3 flex items-start gap-2 text-primary-foreground/80">
-                  <MapPin size={15} className="mt-0.5 shrink-0" />
-                  <p>{location.address}</p>
-                </div>
-                <a
-                  href={location.phoneHref}
-                  className="mt-3 flex items-center gap-2 text-primary-foreground/90 hover:text-primary-foreground"
-                >
-                  <Phone size={15} className="shrink-0" />
-                  {location.phone}
-                </a>
+               <div className="mt-3 flex justify-center">
+  <div className="flex items-start gap-2 text-primary-foreground/80">
+    <Clock size={15} className="mt-1 shrink-0" />
+
+    <div className="space-y-1 text-center">
+      {location.schedule.map((time) => (
+        <p key={time}>{time}</p>
+      ))}
+    </div>
+  </div>
+</div>
+
+<div className="mt-3 flex justify-center">
+  <div className="flex items-center gap-2 text-primary-foreground/80">
+    <MapPin size={15} className="shrink-0" />
+    <p className="text-center">{location.address}</p>
+  </div>
+</div>
+
+<div className="mt-3 flex justify-center">
+  <a
+    href={location.phoneHref}
+    className="flex items-center gap-2 text-primary-foreground/90 hover:text-primary-foreground"
+  >
+    <Phone size={15} className="shrink-0" />
+    <span>{location.phone}</span>
+  </a>
+</div>
               </div>
             ))}
           </div>
