@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import blogImg from "@/assets/hero-physio.jpg";
 import whoHelpImg from "@/assets/who-help.jpg";
 import therapistImg from "@/assets/therapist-portrait.jpg";
+import Posture from "@/assets/Posture.png";
 
 const posts = [
   {
@@ -16,7 +17,7 @@ const posts = [
     excerpt:
       "Discover how small daily adjustments can reduce strain and accelerate your healing process.",
     meta: "Physio Tips · 3 min read",
-    image: therapistImg,
+    image: Posture,
   },
   {
     title: "Athlete-Friendly Rehab: Prevent Injury",

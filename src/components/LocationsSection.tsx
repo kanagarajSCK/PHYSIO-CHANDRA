@@ -97,7 +97,7 @@ const LocationsSection = () => {
 
               
               {/* Logo */}
-              <div className="w-28 h-28 lg:w-32 lg:h-32 rounded-full flex items-center justify-center mx-auto mb-6 overflow-hidden group-hover:bg-primary/10 transition">
+              <div className="w-28 h-28 lg:w-32 lg:h-32 rounded-full flex items-center justify-center mx-auto mb-6 overflow-hidden group-hover:bg-primary/0 transition">
                 <img
                   src={loc.image}
                   alt={loc.imageAlt}
