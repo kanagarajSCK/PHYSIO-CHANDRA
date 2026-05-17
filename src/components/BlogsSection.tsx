@@ -6,24 +6,24 @@ import Posture from "@/assets/Posture.png";
 
 const posts = [
   {
-    title: "5 Essential Stretches to Ease Back Pain",
+    title: "How Neck Adjustments Help Relieve Chronic Pain",
     excerpt:
-      "Learn the targeted movements that relieve tension, improve posture, and support sustained pain relief.",
-    meta: "Wellness · 4 min read",
+      "Learn how cervical therapy and spinal alignment techniques can reduce stiffness, improve mobility, and ease daily discomfort.",
+    meta: "Chiropractic Care · 5 min read",
     image: whoHelpImg,
   },
   {
-    title: "Posture Correction for Faster Recovery",
+    title: "How Resistance Therapy Improves Posture and Mobility",
     excerpt:
-      "Discover how small daily adjustments can reduce strain and accelerate your healing process.",
-    meta: "Physio Tips · 3 min read",
+      "Targeted rehabilitation exercises help strengthen muscles, improve posture, and reduce everyday physical strain.",
+    meta: "Physical Therapy · 4 min read",
     image: Posture,
   },
   {
-    title: "Athlete-Friendly Rehab: Prevent Injury",
+    title: "Hands-On Therapy Techniques for Muscle and Joint Pain",
     excerpt:
-      "Practical physiotherapy strategies to keep athletes strong, flexible, and ready for the next session.",
-    meta: "Sports Care · 5 min read",
+      "Manual therapy helps reduce stiffness, improve movement, and support faster recovery from everyday physical strain.",
+    meta: "Physiotherapy · 5 min read",
     image: blogImg,
   },
 ];
@@ -76,10 +76,10 @@ const BlogsSection = () => {
               height={600}
             />
             <div className="border-t border-border bg-background px-8 py-6">
-              <p className="text-sm uppercase tracking-[0.24em] text-muted-foreground">Featured insight</p>
-              <h3 className="mt-3 text-3xl font-semibold text-foreground">Move better. Recover faster.</h3>
+              <p className="text-sm uppercase tracking-[0.24em] text-muted-foreground">Pain Relief · 6 min read</p>
+              <h3 className="mt-3 text-3xl font-semibold text-foreground">Effective Back and Shoulder Pain Treatment Options</h3>
               <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-                A quick visual guide to the best postural routines and recovery strategies for anyone who wants to feel better every day.
+                Discover evidence-based therapy methods designed to restore movement and relieve persistent muscular discomfort.
               </p>
             </div>
           </motion.div>
