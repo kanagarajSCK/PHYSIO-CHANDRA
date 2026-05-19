@@ -25,7 +25,7 @@ const ChronicPainPage = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-4xl lg:text-6xl font-heading font-bold text-primary mb-6"
             >
-              Chronic Pain Management
+              Orthopedic Manual Therapy Treatment
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

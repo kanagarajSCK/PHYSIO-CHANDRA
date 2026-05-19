@@ -3,6 +3,7 @@ import blogImg from "@/assets/hero-physio.jpg";
 import whoHelpImg from "@/assets/who-help.jpg";
 import therapistImg from "@/assets/therapist-portrait.jpg";
 import Posture from "@/assets/Posture.png";
+import hir from "@/assets/hir.png";
 
 const posts = [
   {
@@ -20,11 +21,11 @@ const posts = [
     image: Posture,
   },
   {
-    title: "Hands-On Therapy Techniques for Muscle and Joint Pain",
+    title: "Dry Needling Treatment for Shoulder and Neck Pain",
     excerpt:
       "Manual therapy helps reduce stiffness, improve movement, and support faster recovery from everyday physical strain.",
     meta: "Physiotherapy · 5 min read",
-    image: blogImg,
+    image: hir,
   },
 ];
 

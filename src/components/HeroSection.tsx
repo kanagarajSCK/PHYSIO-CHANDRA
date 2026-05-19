@@ -9,9 +9,9 @@ import sportsInjuryImg from "@/assets/sports-injury.jpg";
 import headacheImg from "@/assets/headache.jpg";
 
 const conditions = [
-  { title: "CHRONIC PAIN", image: chronicPainImg, path: "/chronic-pain" },
+  { title: "Orthopedic Manual Therapy Treatment", image: chronicPainImg, path: "/chronic-pain" },
   { title: "SPORTS INJURY", image: sportsInjuryImg, path: "/sports-injury" },
-  { title: "HEADACHE", image: headacheImg, path: "/headache" },
+  { title: "Dry Needling Therapy on the Neck", image: headacheImg, path: "/headache" },
 ];
 
 const HeroSection = () => {
